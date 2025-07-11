@@ -37,9 +37,52 @@ def recommend():
             recommend()
 
     else:
-        print(Fore.RED + "TravelBot: sorry, I dpont have that type of destination")
+        print(Fore.RED + "TravelBot: sorry, I dpont have that type of destination.")
     show_help()
-          
+
+def packing_tips():
+    print(Fore.GREEN + "TravelBot: Packing tips for{days} days in {location}:")
+    print(Fore.GREEN + "-Pack versatile clothes.")
+    print(Fore.GREEN + "-Bring chargers/adapters.")
+    print(Fore.GREEN + "-Check the weather forcast.")
+
+def tell_joke():
+    print(Fore.YELLOW + f"TraveBot: {random.choice(jokes)}")
+
+def show_help():
+    print(Fore.MAGENTA + "\nI can:")
+    print(Fore.GREEN + "-Suggest travel spots (say 'recommendation')")
+    print(Fore.GREEN + "-offer packing tips (say 'packing')")
+    print(Fore.GREEN + "-Tell a joke  (say 'joke')")
+    print(Fore.CYAN + "Type 'exit' or 'bye' to end.\n" )
+
+def chat():
+    print(Fore.CYAN + "Hello! I'm TravelBot.")
+    name = input("Fore.YELLOW + your name?")
+    print(Fore.GREEN + f"Nice to meet you, {name}!")
+
+    show_help()
+
+    while True:
+        user_input = input(Fore.YELLOW + f"{name}:")
+        user_input = normalize_input(user_input)
+
+        if "recommend" in user_input or "suggest" in user_input:
+            recommend()
+        elif "pack" in user_input or "funny" in user_input:
+            recommend()
+        elif "joke" in user_input or "funny" in user_input:
+            tell_joke()
+        elif "help" in user_input:
+            show_help()
+        elif "exit" in user_input or "bye" in user_input:
+            print(Fore.CYAN + "TravelBot: Safe travels! Goodbye!")
+            break
+        else:
+            print(Fore.RED + "TravelBot: Could you rephrase?")
+
+    if __name__ == " __ main__":
+        chat()                                          
     
 
 
