@@ -37,5 +37,12 @@ def player_move(board, symbol):
                 print("Please enter a number between 1 and 9.")        
     board[move - 1] = symbol
 def ai_move(board, ai_symbol, player_symbol):
-            for i in range(9):
-                if board[]
+    for i in range(9):
+        if board[i].isdigit():
+            board_copy = board.copy()
+            board_copy[i] = ai_symbol
+            if check_win(board_copy, ai_symbol):
+               board[i] = ai_symbol
+               return
+            
+                     
